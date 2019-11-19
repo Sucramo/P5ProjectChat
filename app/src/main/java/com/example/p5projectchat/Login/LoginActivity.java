@@ -51,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
     Context context;
 
     Button loginBtn;
+    Button createAccBtn;
 
 
 
@@ -83,6 +84,12 @@ public class LoginActivity extends AppCompatActivity {
         password = passEdit.getText().toString();
 
         signInWithFirebase(email, password);
+    }
+
+
+    public void createAccountButton(View view){
+        startActivity(new Intent(this, CreateAccountActivity.class));
+        finish();
     }
 
     public void signInWithFirebase(final String email, String password){

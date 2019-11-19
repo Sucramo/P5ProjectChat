@@ -6,19 +6,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -26,6 +22,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.p5projectchat.Database.User;
 import com.example.p5projectchat.Login.LoginActivity;
 import com.example.p5projectchat.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -83,6 +80,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     private static int RESULT_LOAD_IMAGE = 1;
     ImageView imageView;
     ImageButton imageButton;
+    Button createAccountButton;
 
 
 
@@ -97,8 +95,8 @@ public class CreateAccountActivity extends AppCompatActivity {
         editEmail = (EditText)findViewById(R.id.emailEdit);
         editPassword = (EditText)findViewById(R.id.passEdit);
         editConfirmPassword = (EditText)findViewById(R.id.confirmPassEdit);
-        uploadPhotoView = (TextView)findViewById(R.id.uploadPhotoView);
         context = getApplicationContext();
+        createAccountButton = (Button)findViewById(R.id.createAccountButton);
 
         //Firebase
         auth = FirebaseAuth.getInstance();
@@ -202,7 +200,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     }
 
     private void writeNewUser(String firstName, String lastName, String email, String password, String userID, boolean isLoggedIn, String profilePicture) {
-        User user = new User(firstName, lastName, email, password, userID, isLoggedIn, profilePicture);
+        User user = new User(firstName, lastName, email, password, userID, isLoggedIn);
 
         myDatabaseRef.child("users").child(userID).setValue(user);
     }
