@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "482000231982",
+    "firebase_url": "https://projectchat-ddf3d.firebaseio.com",
+    "project_id": "projectchat-ddf3d",
+    "storage_bucket": "projectchat-ddf3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482000231982:android:a26df6b4c109fadd53c9bf",
+        "android_client_info": {
+          "package_name": "com.example.p5projectchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482000231982-15es4or618h7ft0h475v34v89vvb6vdu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.p5projectchat",
+            "certificate_hash": "ae61a2d5e55303c82dd33800e03370825ae8998d"
+          }
+        },
+        {
+          "client_id": "482000231982-6ep26rh6e3ps27jkb34a6nqec9amoks1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDflZWC9_lDAzSWTBq0D1KblyUayQWApJo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482000231982-6ep26rh6e3ps27jkb34a6nqec9amoks1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
