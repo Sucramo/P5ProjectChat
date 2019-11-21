@@ -6,4 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".UserSettings.UserSettingsActivity">
 
+    <TextView
+        android:id="@+id/get_first_name"
+        android:layout_width="250sp"
+        android:layout_height="30sp"
+
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/get_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/get_last_name"
+        android:layout_width="250sp"
+        android:layout_height="30sp"
+        android:layout_marginBottom="144dp"
+        app:layout_constraintBottom_toTopOf="@+id/edit_user_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/get_email"
+        android:layout_width="250sp"
+        android:layout_height="30sp"
+
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/get_last_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/edit_user_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="116dp"
+        android:onClick="editProfileButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/user_image_button"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="@drawable/roundcorner"
+        app:layout_constraintBottom_toTopOf="@+id/get_first_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

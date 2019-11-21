@@ -200,7 +200,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     }
 
     private void writeNewUser(String firstName, String lastName, String email, String password, String userID, boolean isLoggedIn, String profilePicture) {
-        User user = new User(firstName, lastName, email, password, userID, isLoggedIn);
+        User user = new User(firstName, lastName, email, password, userID, isLoggedIn, profilePicture);
 
         myDatabaseRef.child("users").child(userID).setValue(user);
     }
