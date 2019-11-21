@@ -5,7 +5,9 @@ import android.os.Bundle;
 import com.example.p5projectchat.R;
 import java.lang.Object;
 
-public class FirstPage extends AppCompatActivity {
+public class FirstPageActivity extends AppCompatActivity {
+
+    //AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

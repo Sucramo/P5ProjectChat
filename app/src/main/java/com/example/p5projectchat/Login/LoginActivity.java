@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.p5projectchat.ProjectManagement.FirstPageActivity;
 import com.example.p5projectchat.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -79,11 +79,13 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void loginButton(View view){
-        //intent.setClass(this, M)
         email = emailEdit.getText().toString();
         password = passEdit.getText().toString();
 
         signInWithFirebase(email, password);
+
+        intent.setClass(this, FirstPageActivity.class);
+
     }
 
 
@@ -100,8 +102,8 @@ public class LoginActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
                             Log.d(TAG, "signInWithEmail:SUCCESS");
 
-                            //startActivity(intent);
-                            //MainActivity.getInstance().finish();
+                            startActivity(intent);
+
                             finish();
                         } else{
                             Log.w(TAG, "signInWithEmail:FAILURE", task.getException());
