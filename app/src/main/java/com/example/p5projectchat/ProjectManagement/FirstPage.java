@@ -7,8 +7,6 @@ import java.lang.Object;
 
 public class FirstPage extends AppCompatActivity {
 
-    AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
