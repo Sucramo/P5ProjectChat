@@ -2,7 +2,10 @@ package com.example.p5projectchat.ProjectManagement;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
+
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,6 +14,9 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.p5projectchat.R;
+
+import com.example.p5projectchat.Tabs.SectionsPagerAdapter;
+import com.google.android.material.tabs.TabLayout;
 
 import java.lang.Object;
 
@@ -22,6 +28,7 @@ public class FirstPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_page);
+
 
         //Toolbar insertion
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -51,5 +58,12 @@ public class FirstPageActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+
+        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+        ViewPager viewPager = findViewById(R.id.view_pager);
+        viewPager.setAdapter(sectionsPagerAdapter);
+        TabLayout tabs = findViewById(R.id.tabs);
+        tabs.setupWithViewPager(viewPager);
+
     }
 }
