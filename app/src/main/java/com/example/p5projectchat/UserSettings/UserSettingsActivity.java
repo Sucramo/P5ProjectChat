@@ -35,9 +35,6 @@ public class UserSettingsActivity extends AppCompatActivity {
     private static int RESULT_LOAD_IMAGE = 1;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +43,11 @@ public class UserSettingsActivity extends AppCompatActivity {
         final TextView fname = (TextView) findViewById(R.id.get_first_name);
         final TextView lname = (TextView) findViewById(R.id.get_last_name);
         final TextView email = (TextView) findViewById(R.id.get_email);
+
+        TextView firstNameText = (TextView) findViewById(R.id.first_name_text);
+        TextView lastNameText = (TextView) findViewById(R.id.last_name_text);
+        TextView emailNameText = (TextView) findViewById(R.id.email_text);
+
         ImageButton profilePic = (ImageButton) findViewById(R.id.user_image_button);
         Button editProfile = (Button) findViewById(R.id.edit_user_button);
 
@@ -60,7 +62,6 @@ public class UserSettingsActivity extends AppCompatActivity {
                 fname.setText(user.getFirstName());
                 lname.setText(user.getLastName());
                 email.setText(user.getEmail());
-
             }
 
             @Override

@@ -9,6 +9,7 @@ public class User {
         this.password = password;
         this.isLoggedIn = isLoggedIn;
         this.userID = userID;
+        this.profilePicture = profilePicture;
     }
 
     public User(){

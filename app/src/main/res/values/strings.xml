@@ -12,4 +12,6 @@
     <string name="create_account_button">Create account</string>
     <string name="create_account_activity">Create Account</string>
     <string name="edit_profile_btn">Edit Profile</string>
+    <string name="change_profile_picture_btn">Change profile picture</string>
+    <string name="save">Save</string>
 </resources>
