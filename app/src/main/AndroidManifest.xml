@@ -31,14 +31,11 @@
 
 
         <activity
-            android:name=".UserSettings.EditUserActivity"/>
-
-
+            android:name=".UserSettings.EditUserActivity"
+            />
         <activity
             android:name=".UserSettings.UserSettingsActivity"
             />
-        <activity
-            android:name=".ProjectManagement.FirstPageActivity" />
         <activity
             android:name=".Login.CreateAccountActivity" />
         <activity
@@ -52,8 +49,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login.CreateAccountActivity" />
-        <activity android:name=".Login.LoginActivity" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
