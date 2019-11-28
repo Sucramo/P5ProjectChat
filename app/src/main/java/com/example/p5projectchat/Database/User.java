@@ -2,13 +2,14 @@ package com.example.p5projectchat.Database;
 
 public class User {
 
-    public User (String firstname, String lastname, String email, String password, String userID, boolean isLoggedIn){
+    public User (String firstname, String lastname, String email, String password, String userID, boolean isLoggedIn, String profilePicture){
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.isLoggedIn = isLoggedIn;
         this.userID = userID;
+        this.profilePicture = profilePicture;
     }
 
     public User(){
@@ -20,6 +21,7 @@ public class User {
         this.email = email;
         this.password = password;
         this.isLoggedIn = isLoggedIn;
+        this.profilePicture = profilePicture;
     }
 
     private String userID;
@@ -32,6 +34,8 @@ public class User {
 
     private String password;
 
+    private String profilePicture;
+
     private boolean isLoggedIn;
 
     public boolean isLoggedIn() {
@@ -41,7 +45,6 @@ public class User {
     public void setLoggedIn(boolean loggedIn) {
         isLoggedIn = loggedIn;
     }
-
 
     public String getFirstName(){
         return firstName;
@@ -73,5 +76,21 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getProfilePicture(){
+        return profilePicture;
+    }
+
+    public void setProfilePicture(String profilePicture){
+        this.profilePicture = profilePicture;
+    }
+
+    public String getUserID(){
+        return userID;
+    }
+
+    public void setUserID(String userID){
+        this.userID = userID;
     }
 }
