@@ -87,8 +87,8 @@ public class FirstPageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Map<String, Object> map = new HashMap<String, Object>();
                 map.put(room_name.getText().toString(), "");
-                room_name.getText().clear();
                 root.updateChildren(map);
+                room_name.getText().clear();
             }
         });
 
