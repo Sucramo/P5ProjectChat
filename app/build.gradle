@@ -18,6 +18,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    packagingOptions{
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE-FIREBASE.txt'
+        exclude 'META-INF/NOTICE'
+    }
 }
 
 dependencies {
@@ -39,6 +45,13 @@ dependencies {
     //storage
     implementation 'com.google.firebase:firebase-storage:16.0.4'
 
+
+    // Picture in ImageView
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // circle image
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'com.master.android:glideimageview:1.0'
 
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.annotation:annotation:1.0.2'

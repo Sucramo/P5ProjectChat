@@ -8,6 +8,7 @@
     android:fitsSystemWindows="true"
     tools:context=".ProjectManagement.FirstPageActivity">
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -90,3 +91,4 @@
     <!--        app:menu="@menu/drawer_menu" -->
 
 </androidx.drawerlayout.widget.DrawerLayout>
+

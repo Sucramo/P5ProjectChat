@@ -5,18 +5,19 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
+    <string name="welcome">Welcome !</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
-    <string name="create_account_button">"Create account</string>
-    <string name="create_account_activity">"Create Account</string>
+    <string name="login_failed">Login failed</string>
+    <string name="create_account_button">Create account</string>
+    <string name="create_account_activity">Create Account</string>
+    <string name="edit_profile_btn">Edit Profile</string>
+    <string name="change_profile_picture_btn">Change profile picture</string>
+    <string name="save">Save</string>
     <string name="tab_text_1">Chat</string>
     <string name="tab_text_2">Tasks</string>
     <string name="text_view_chat">This is the page for chat</string>
     <string name="text_view_tasks">This is the page for tasks</string>
-
-    <string name="navigation_drawer_open">Open navigation drawer</string>
+   <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
 </resources>

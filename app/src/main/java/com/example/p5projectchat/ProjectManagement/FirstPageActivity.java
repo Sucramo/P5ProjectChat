@@ -4,6 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import com.example.p5projectchat.R;
+import com.example.p5projectchat.UserSettings.EditUserActivity;
+import com.example.p5projectchat.UserSettings.UserSettingsActivity;
+
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -34,6 +44,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+
 import java.lang.Object;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -56,11 +67,14 @@ public class FirstPageActivity extends AppCompatActivity {
 
     //AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder
 
+    Intent i;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_page);
 
+        Adding-chat-rooms-to-navigation-drawer
         add_room = (Button) findViewById(R.id.btn_add_room);
         room_name = (EditText) findViewById(R.id.room_name_edittext);
         listView = (ListView) findViewById(R.id.listView);
@@ -111,6 +125,13 @@ public class FirstPageActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
+    }
+
+    public void openUserSettings(View view){
+        startActivity(new Intent(this, UserSettingsActivity.class));
 
 
         //Toolbar insertion
@@ -167,4 +188,6 @@ public class FirstPageActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
 
     }
+
+
 }
