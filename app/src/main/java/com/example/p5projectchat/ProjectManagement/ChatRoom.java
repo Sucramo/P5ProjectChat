@@ -58,6 +58,7 @@ public class ChatRoom extends AppCompatActivity {
                 Map<String, Object> map2 = new HashMap<String, Object>();
                 map2.put("name", user_name);
                 map2.put("msg", input_msg.getText().toString());
+                input_msg.getText().clear();
 
                 message_root.updateChildren(map2);
 
