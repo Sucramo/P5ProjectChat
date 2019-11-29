@@ -74,7 +74,6 @@ public class FirstPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_page);
 
-        Adding-chat-rooms-to-navigation-drawer
         add_room = (Button) findViewById(R.id.btn_add_room);
         room_name = (EditText) findViewById(R.id.room_name_edittext);
         listView = (ListView) findViewById(R.id.listView);
@@ -126,14 +125,6 @@ public class FirstPageActivity extends AppCompatActivity {
             }
         });
 
-
-
-    }
-
-    public void openUserSettings(View view){
-        startActivity(new Intent(this, UserSettingsActivity.class));
-
-
         //Toolbar insertion
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -152,6 +143,12 @@ public class FirstPageActivity extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
+
+    }
+
+    public void openUserSettings(View view){
+        startActivity(new Intent(this, UserSettingsActivity.class));
+
     }
 
     @Override
