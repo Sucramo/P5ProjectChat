@@ -85,7 +85,6 @@ public class LoginActivity extends AppCompatActivity {
         signInWithFirebase(email, password);
 
         intent.setClass(this, FirstPageActivity.class);
-
     }
 
 
