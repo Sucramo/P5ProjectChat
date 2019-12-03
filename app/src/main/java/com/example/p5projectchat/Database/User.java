@@ -2,14 +2,13 @@ package com.example.p5projectchat.Database;
 
 public class User {
 
-    public User (String firstname, String lastname, String email, String password, String userID, boolean isLoggedIn, String profilePicture){
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public User (String firstname, String lastname, String email, String password, String userID, boolean isLoggedIn){
+        this.firstName = firstname;
+        this.lastName = lastname;
         this.email = email;
         this.password = password;
         this.isLoggedIn = isLoggedIn;
         this.userID = userID;
-        this.profilePicture = profilePicture;
     }
 
     public User(){
@@ -21,7 +20,6 @@ public class User {
         this.email = email;
         this.password = password;
         this.isLoggedIn = isLoggedIn;
-        this.profilePicture = profilePicture;
     }
 
     private String userID;

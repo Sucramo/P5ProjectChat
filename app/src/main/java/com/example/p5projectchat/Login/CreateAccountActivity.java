@@ -143,6 +143,9 @@ public class CreateAccountActivity extends AppCompatActivity {
         } else if (password.length() < 8){
             editPassword.setError("Password must contain at least 8 characters");
 
+        } else if (!isValidEmail(email)){
+            editEmail.setError("This is not a valid email."); // Does not check if the email exist. Only the format example@123.aaa
+            emailNotValidToast.show();
         } else{
             createUserFirebase(email, password);
         }
@@ -291,7 +294,7 @@ public class CreateAccountActivity extends AppCompatActivity {
 
     private void onAuthSuccess(FirebaseUser user) {
         // Write new user
-        writeNewUser(firstName, lastName, email, password, user.getUid(), false, picturePath);
+        writeNewUser(firstName, lastName, email, password, user.getUid(), false);
         // Go to FirstPageActivity
         intent = new Intent (this, LoginActivity.class);
         intent.putExtra(EXTRA_ID, email);
@@ -299,9 +302,9 @@ public class CreateAccountActivity extends AppCompatActivity {
         finish();
     }
 
-    private void writeNewUser(String firstName, String lastName, String email, String password, String userID, boolean isLoggedIn, String profilePicture) {
-        User user = new User(firstName, lastName, email, password, userID, isLoggedIn, profilePicture);
-        myDatabaseRef.child("users").child(email).setValue(user);
+    private void writeNewUser(String firstName, String lastName, String email, String password, String userID, boolean isLoggedIn) {
+        User user = new User(firstName, lastName, email, password, userID, isLoggedIn);
+        myDatabaseRef.child("users").child(userID).setValue(user);
     }
 
     public static boolean isValidEmail(CharSequence target){
@@ -311,9 +314,5 @@ public class CreateAccountActivity extends AppCompatActivity {
             return Patterns.EMAIL_ADDRESS.matcher(target).matches();
         }
     }
-
-
-
-
 
 }
