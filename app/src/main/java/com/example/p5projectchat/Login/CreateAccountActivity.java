@@ -36,6 +36,7 @@ import android.widget.Toast;
 import com.example.p5projectchat.Database.User;
 import com.example.p5projectchat.Login.LoginActivity;
 import com.example.p5projectchat.R;
+import com.example.p5projectchat.Security.AES;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -293,8 +294,10 @@ public class CreateAccountActivity extends AppCompatActivity {
     }
 
     private void onAuthSuccess(FirebaseUser user) {
+
+        String pass = AES.encrypt(password, password);
         // Write new user
-        writeNewUser(firstName, lastName, email, password, user.getUid(), false);
+        writeNewUser(firstName, lastName, email, pass, user.getUid(), false);
         // Go to FirstPageActivity
         intent = new Intent (this, LoginActivity.class);
         intent.putExtra(EXTRA_ID, email);
@@ -303,6 +306,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     }
 
     private void writeNewUser(String firstName, String lastName, String email, String password, String userID, boolean isLoggedIn) {
+
         User user = new User(firstName, lastName, email, password, userID, isLoggedIn);
         myDatabaseRef.child("users").child(userID).setValue(user);
     }
