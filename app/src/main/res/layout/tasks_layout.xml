@@ -1,11 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textViewTasks"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btn_add_task"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/text_view_tasks" />
-</LinearLayout>
+        android:text="Add Task">
+
+    </Button>
+
+    <EditText
+        android:id="@+id/et_add_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/btn_add_task">
+
+    </EditText>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdgeLength="0dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:layout_below="@id/btn_add_task">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.example.p5projectchat.UserSettings.NonScrollListView
+                android:id="@+id/toDoList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toDoList">
+
+                <com.example.p5projectchat.UserSettings.NonScrollListView
+                    android:id="@+id/doingList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/doingList">
+
+                    <com.example.p5projectchat.UserSettings.NonScrollListView
+                        android:id="@+id/doneList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
