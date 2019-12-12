@@ -21,13 +21,15 @@ import javax.crypto.spec.SecretKeySpec;
  */
 public class AES {
 
+    private String AES = "AES";
+
     private static final int ITERATION_COUNT = 1000;
 
     private static final int KEY_LENGTH = 256;
 
-    private static final String PBKDF2_DERIVATION_ALGORITHM = "PBKDF2WithHmacSHA1";
+    private static final String PBKDF2_DERIVATION_ALGORITHM = "PBKDF2WithHmacSHA512";
 
-    private static final String CIPHER_ALGORITHM = "AES/CBC/PKCS5Padding";
+    private static final String CIPHER_ALGORITHM = "AES/CBC/PKCS7Padding";
 
     private static final int PKCS5_SALT_LENGTH = 32;
 
@@ -42,7 +44,7 @@ public class AES {
      * @param password The password to the encryption key
      * @return encrypted text
      */
-    public static String encrypt(String plaintext, String password){
+    /*public static String encrypt(String plaintext, String password){
         byte[] salt = generateSalt();
 
         SecretKey key = deriveKey(password, salt);
@@ -70,7 +72,7 @@ public class AES {
         } catch (GeneralSecurityException | UnsupportedEncodingException e){
             throw new RuntimeException(e);
         }
-    }
+    }*/
 
 
     /**
@@ -79,7 +81,7 @@ public class AES {
      * @param password The password to the encryption key
      * @return
      */
-    public static String decrypt(String ciphertext, String password) {
+    /*public static String decrypt(String ciphertext, String password) {
         String[] fields = ciphertext.split(DELIMITER);
         if(fields.length != 3) {
             throw new IllegalArgumentException("Invalid encypted text format");
@@ -98,7 +100,7 @@ public class AES {
         } catch (GeneralSecurityException | UnsupportedEncodingException e) {
             throw new RuntimeException(e);
         }
-    }
+    } */
 
 
     /**
@@ -146,6 +148,70 @@ public class AES {
         } catch (GeneralSecurityException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    /**
+     *
+     * @param strToEncrypt String to encrypt
+     * @param password  password
+     * @return encryptedValue to be stored in database
+     */
+    public static String encrypt(String strToEncrypt, String password) {
+        try {
+            SecretKeySpec key = generateKeyNumbertwo(password);
+            Cipher cipher = Cipher.getInstance(CIPHER_ALGORITHM);
+            cipher.init(Cipher.ENCRYPT_MODE, key);
+
+            byte[] encVal = cipher.doFinal(strToEncrypt.getBytes());
+            String encryptedValue = Base64.encodeToString(encVal, Base64.DEFAULT);
+            return encryptedValue;
+        } catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+
+    /**
+     *
+     * @param strToDecrypt string to decrypt
+     * @param password password
+     * @return decoded value is shown as plaintext
+     */
+    public static String decrypt(String strToDecrypt, String password){
+        try {
+            SecretKeySpec key = generateKeyNumbertwo(password);
+            Cipher cipher = Cipher.getInstance(CIPHER_ALGORITHM);
+            cipher.init(Cipher.DECRYPT_MODE, key);
+            byte[] decodedVal = Base64.decode(strToDecrypt, Base64.DEFAULT);
+            byte[] decVal = cipher.doFinal(decodedVal);
+            String decryptedValue = new String(decVal);
+            return decryptedValue;
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     *
+     * @param password password
+     * @return
+     */
+    private static SecretKeySpec generateKeyNumbertwo(String password){
+        try {
+            final MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] bytes = password.getBytes("UTF-8");
+            digest.update(bytes, 0, bytes.length);
+
+            byte[] key = digest.digest();
+            SecretKeySpec secretKeySpec = new SecretKeySpec(key, "AES");
+            return secretKeySpec;
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+
     }
 
 }
