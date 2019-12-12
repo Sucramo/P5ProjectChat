@@ -9,13 +9,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.p5projectchat.Database.User;
 import com.example.p5projectchat.R;
+
 import com.example.p5projectchat.Security.AES;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -27,6 +34,9 @@ import androidx.fragment.app.Fragment;
 
 public class ChatFragment extends Fragment {
 
+    private FirebaseUser firebaseUser;
+    private FirebaseDatabase database;
+    private DatabaseReference databaseReference;
     private Button btn_send_msg;
     private EditText input_msg;
     private TextView chat_conversation;
@@ -36,14 +46,29 @@ public class ChatFragment extends Fragment {
     private String temp_key;
 
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.chat_layout, container, false);
 
         room_name = Global.global_room_name;
-        user_name = "Bobby";
+
+        database = FirebaseDatabase.getInstance();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        databaseReference = database.getReference();
+        databaseReference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String uid = firebaseUser.getUid();
+                User user = dataSnapshot.child(uid).getValue(User.class);
+                user_name = user.getFirstName();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 
         btn_send_msg = (Button) view.findViewById(R.id.btn_send);

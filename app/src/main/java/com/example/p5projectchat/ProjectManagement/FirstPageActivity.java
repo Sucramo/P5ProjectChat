@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.p5projectchat.MainActivity;
 import com.example.p5projectchat.R;
 import com.example.p5projectchat.UserSettings.EditUserActivity;
 import com.example.p5projectchat.UserSettings.UserSettingsActivity;
@@ -172,14 +173,13 @@ public class FirstPageActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.item1:
-                Toast.makeText(this, "Item 1 selected", Toast.LENGTH_SHORT).show();
+            case R.id.user_settings:
+                startActivity(new Intent(this, UserSettingsActivity.class));
                 return true;
-            case R.id.item2:
-                Toast.makeText(this, "Item 2 selected", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.item3:
-                Toast.makeText(this, "Item 3 selected", Toast.LENGTH_SHORT).show();
+            case R.id.sign_out:
+                FirebaseAuth.getInstance().signOut();
+                finish();
+                startActivity(new Intent(this, MainActivity.class));
                 return true;
         }
         return super.onOptionsItemSelected(item);

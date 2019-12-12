@@ -3,19 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/item1"
+        android:id="@+id/user_settings"
         android:icon="@drawable/ic_more_vert_white_24dp"
-        android:title="item1"
+        android:title="User Settings"
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/item2"
-        android:title="item2"
-        app:showAsAction="never" />
-
-    <item
-        android:id="@+id/item3"
-        android:title="item3"
+        android:id="@+id/sign_out"
+        android:title="Sign Out"
         app:showAsAction="never" />
 
 </menu>
