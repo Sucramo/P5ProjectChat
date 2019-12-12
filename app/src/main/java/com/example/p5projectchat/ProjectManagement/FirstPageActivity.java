@@ -12,7 +12,6 @@ import android.widget.Button;
 
 import com.example.p5projectchat.MainActivity;
 import com.example.p5projectchat.R;
-import com.example.p5projectchat.UserSettings.EditUserActivity;
 import com.example.p5projectchat.UserSettings.UserSettingsActivity;
 
 import androidx.appcompat.widget.Toolbar;
@@ -21,21 +20,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager.widget.ViewPager;
 
 
-import android.content.Intent;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.example.p5projectchat.R;
 
 import com.example.p5projectchat.Tabs.SectionsPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
@@ -124,6 +116,7 @@ public class FirstPageActivity extends AppCompatActivity {
                 Global.global_room_name = ((TextView)view).getText().toString();
                 Intent intent = new Intent(getApplicationContext(), FirstPageActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 
