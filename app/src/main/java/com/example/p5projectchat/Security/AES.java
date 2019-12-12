@@ -175,7 +175,7 @@ public class AES {
     /**
      *
      * @param strToDecrypt string to decrypt
-     * @param password password
+     * @param password password to generate a key
      * @return decoded value is shown as plaintext
      */
     public static String decrypt(String strToDecrypt, String password){
