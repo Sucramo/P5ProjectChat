@@ -174,6 +174,7 @@ public class FirstPageActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.item1:
                 Toast.makeText(this, "Item 1 selected", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, UserSettingsActivity.class));
                 return true;
             case R.id.item2:
                 Toast.makeText(this, "Item 2 selected", Toast.LENGTH_SHORT).show();
