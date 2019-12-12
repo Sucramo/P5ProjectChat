@@ -39,6 +39,7 @@ import com.example.p5projectchat.R;
 
 import com.example.p5projectchat.Tabs.SectionsPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
