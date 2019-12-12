@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.p5projectchat.R;
+import com.example.p5projectchat.Security.AES;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -96,7 +97,8 @@ public class ChatFragment extends Fragment {
                 DatabaseReference message_root = root.child(temp_key);
                 Map<String, Object> map2 = new HashMap<String, Object>();
                 map2.put("name", user_name);
-                map2.put("msg", input_msg.getText().toString());
+                String encryptedMessage = AES.encrypt(input_msg.getText().toString(), room_name);
+                map2.put("msg", encryptedMessage);
                 input_msg.getText().clear();
 
                 message_root.updateChildren(map2);
@@ -110,17 +112,16 @@ public class ChatFragment extends Fragment {
     }
 
 
-    private String chat_msg, chat_user_name;
-
     private void append_chat_conversation(DataSnapshot dataSnapshot) {
         Iterator i = dataSnapshot.getChildren().iterator();
 
         while (i.hasNext()) {
 
-            chat_msg = (String) ((DataSnapshot) i.next()).getValue();
-            chat_user_name = (String) ((DataSnapshot) i.next()).getValue();
+            String chat_msg = (String) ((DataSnapshot) i.next()).getValue();
+            String decrypted_chat_msg = AES.decrypt(chat_msg, room_name);
+            String chat_user_name = (String) ((DataSnapshot) i.next()).getValue();
 
-            chat_conversation.append(chat_user_name + ": " + chat_msg + " \n");
+            chat_conversation.append(chat_user_name + ": " + decrypted_chat_msg + " \n");
 
         }
     }
