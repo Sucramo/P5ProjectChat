@@ -44,7 +44,7 @@ public class AES {
      * @param password The password to the encryption key
      * @return encrypted text
      */
-    public static String encrypt(String plaintext, String password){
+    /*public static String encrypt(String plaintext, String password){
         byte[] salt = generateSalt();
 
         SecretKey key = deriveKey(password, salt);
@@ -72,7 +72,7 @@ public class AES {
         } catch (GeneralSecurityException | UnsupportedEncodingException e){
             throw new RuntimeException(e);
         }
-    }
+    }*/
 
 
     /**
@@ -81,7 +81,7 @@ public class AES {
      * @param password The password to the encryption key
      * @return
      */
-    public static String decrypt(String ciphertext, String password) {
+    /*public static String decrypt(String ciphertext, String password) {
         String[] fields = ciphertext.split(DELIMITER);
         if(fields.length != 3) {
             throw new IllegalArgumentException("Invalid encypted text format");
@@ -100,7 +100,7 @@ public class AES {
         } catch (GeneralSecurityException | UnsupportedEncodingException e) {
             throw new RuntimeException(e);
         }
-    }
+    } */
 
 
     /**
@@ -150,7 +150,13 @@ public class AES {
         }
     }
 
-    public static String encryptNumberTwo(String strToEncrypt, String password) {
+    /**
+     *
+     * @param strToEncrypt String to encrypt
+     * @param password  password
+     * @return encryptedValue to be stored in database
+     */
+    public static String encrypt(String strToEncrypt, String password) {
         try {
             SecretKeySpec key = generateKeyNumbertwo(password);
             Cipher cipher = Cipher.getInstance(CIPHER_ALGORITHM);
@@ -166,24 +172,45 @@ public class AES {
 
     }
 
-    public static String decryptNumberTwo(String strToDecrypt, String password) throws Exception{
-        SecretKeySpec key = generateKeyNumbertwo(password);
-        Cipher cipher = Cipher.getInstance(CIPHER_ALGORITHM);
-        cipher.init(Cipher.DECRYPT_MODE, key);
-        byte[] decodedVal = Base64.decode(strToDecrypt, Base64.DEFAULT);
-        byte[] decVal = cipher.doFinal(decodedVal);
-        String decryptedValue = new String(decVal);
-        return decryptedValue;
+    /**
+     *
+     * @param strToDecrypt string to decrypt
+     * @param password password
+     * @return decoded value is shown as plaintext
+     */
+    public static String decrypt(String strToDecrypt, String password){
+        try {
+            SecretKeySpec key = generateKeyNumbertwo(password);
+            Cipher cipher = Cipher.getInstance(CIPHER_ALGORITHM);
+            cipher.init(Cipher.DECRYPT_MODE, key);
+            byte[] decodedVal = Base64.decode(strToDecrypt, Base64.DEFAULT);
+            byte[] decVal = cipher.doFinal(decodedVal);
+            String decryptedValue = new String(decVal);
+            return decryptedValue;
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
     }
 
-    private static SecretKeySpec generateKeyNumbertwo(String password) throws Exception{
-        final MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        byte [] bytes = password.getBytes("UTF-8");
-        digest.update(bytes, 0, bytes.length);
+    /**
+     *
+     * @param password password
+     * @return
+     */
+    private static SecretKeySpec generateKeyNumbertwo(String password){
+        try {
+            final MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] bytes = password.getBytes("UTF-8");
+            digest.update(bytes, 0, bytes.length);
 
-        byte[] key = digest.digest();
-        SecretKeySpec secretKeySpec = new SecretKeySpec(key, "AES");
-        return secretKeySpec;
+            byte[] key = digest.digest();
+            SecretKeySpec secretKeySpec = new SecretKeySpec(key, "AES");
+            return secretKeySpec;
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
 
     }
 

@@ -294,7 +294,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     }
 
     private void onAuthSuccess(FirebaseUser user) {
-        String pass = AES.encryptNumberTwo(password, password);
+        String pass = AES.encrypt(password, password);
         // Write new user
         writeNewUser(firstName, lastName, email, pass, user.getUid(), false);
         // Go to FirstPageActivity
