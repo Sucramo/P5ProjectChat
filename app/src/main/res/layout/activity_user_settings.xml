@@ -89,7 +89,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.86"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/ripple_effect"/>
+        android:background="@drawable/ripple_effect"
+        android:textColor="@color/white"/>
 
     <ImageButton
         android:id="@+id/user_image_button"

@@ -22,7 +22,8 @@
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/toolbar">
+            android:layout_below="@id/toolbar"
+            android:background="@color/test">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -33,7 +34,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="?attr/colorPrimary"
-                    tools:ignore="MissingConstraints" />
+                    tools:ignore="MissingConstraints"
+                    app:tabTextColor="@color/white"
+                    app:tabIndicatorColor="@color/cold"/>
 
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/view_pager"
@@ -81,7 +84,8 @@
                 android:layout_below="@id/listView"
                 android:layout_alignParentRight="true"
                 android:text="Add Room"
-                android:background="@drawable/ripple_effect"/>
+                android:background="@drawable/ripple_effect"
+                android:textColor="@color/white"/>
 
 
         </RelativeLayout>
