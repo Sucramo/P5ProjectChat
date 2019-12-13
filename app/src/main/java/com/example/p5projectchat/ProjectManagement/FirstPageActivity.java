@@ -81,12 +81,13 @@ public class FirstPageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Map<String, Object> map = new HashMap<String, Object>();
                 map.put(room_name.getText().toString(), "");
-                root.updateChildren(map);
+                root.child("Rooms").updateChildren(map);
+                //root.updateChildren(map);
                 room_name.getText().clear();
             }
         });
 
-        root.addValueEventListener(new ValueEventListener() {
+        root.child("Rooms").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 

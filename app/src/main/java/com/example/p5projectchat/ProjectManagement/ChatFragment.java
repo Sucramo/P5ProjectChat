@@ -75,12 +75,12 @@ public class ChatFragment extends Fragment {
         });
 
 
-        btn_send_msg = (Button) view.findViewById(R.id.btn_send);
-        input_msg = (EditText) view.findViewById(R.id.msg_input);
-        chat_conversation = (TextView) view.findViewById(R.id.chat_conversation);
+        btn_send_msg = view.findViewById(R.id.btn_send);
+        input_msg = view.findViewById(R.id.msg_input);
+        chat_conversation = view.findViewById(R.id.chat_conversation);
 
         if (room_name != null) {
-            root = FirebaseDatabase.getInstance().getReference().child(room_name);
+            root = FirebaseDatabase.getInstance().getReference().child("Rooms").child(room_name).child("Messages");
             Log.d("roomname != null:", room_name);
 
             root.addChildEventListener(new ChildEventListener() {
