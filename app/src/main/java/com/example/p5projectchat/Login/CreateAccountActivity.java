@@ -37,6 +37,7 @@ import com.example.p5projectchat.Database.User;
 import com.example.p5projectchat.Login.LoginActivity;
 import com.example.p5projectchat.R;
 import com.example.p5projectchat.Security.AES;
+import com.example.p5projectchat.Security.AESTwo;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -294,7 +295,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     }
 
     private void onAuthSuccess(FirebaseUser user) {
-        String pass = AES.encrypt(password, password);
+        String pass = AES.encrypt(password);
         // Write new user
         writeNewUser(firstName, lastName, email, pass, user.getUid(), false);
         // Go to FirstPageActivity
