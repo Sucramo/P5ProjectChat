@@ -37,7 +37,6 @@ import com.example.p5projectchat.Database.User;
 import com.example.p5projectchat.Login.LoginActivity;
 import com.example.p5projectchat.R;
 import com.example.p5projectchat.Security.AES;
-import com.example.p5projectchat.Security.AESTwo;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
