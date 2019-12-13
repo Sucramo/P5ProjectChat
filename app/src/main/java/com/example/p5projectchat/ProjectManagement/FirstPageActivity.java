@@ -116,6 +116,7 @@ public class FirstPageActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Global.global_room_name = ((TextView)view).getText().toString();
                 Intent intent = new Intent(getApplicationContext(), FirstPageActivity.class);
+                drawer.closeDrawers();
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
