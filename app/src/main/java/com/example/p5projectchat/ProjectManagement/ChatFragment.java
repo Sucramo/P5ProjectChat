@@ -1,5 +1,6 @@
 package com.example.p5projectchat.ProjectManagement;
 
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
 
 import com.example.p5projectchat.Database.User;
 import com.example.p5projectchat.R;
@@ -23,6 +25,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.io.UnsupportedEncodingException;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -114,7 +118,6 @@ public class ChatFragment extends Fragment {
         btn_send_msg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Map<String, Object> map = new HashMap<String, Object>();
                 temp_key = root.push().getKey();
                 root.updateChildren(map);
@@ -122,7 +125,7 @@ public class ChatFragment extends Fragment {
                 DatabaseReference message_root = root.child(temp_key);
                 Map<String, Object> map2 = new HashMap<String, Object>();
                 map2.put("name", user_name);
-                String encryptedMessage = AES.encrypt(input_msg.getText().toString(), room_name);
+                String encryptedMessage = AES.encrypt(input_msg.getText().toString());
                 map2.put("msg", encryptedMessage);
                 input_msg.getText().clear();
 
@@ -136,18 +139,25 @@ public class ChatFragment extends Fragment {
         return view;
     }
 
-
     private void append_chat_conversation(DataSnapshot dataSnapshot) {
         Iterator i = dataSnapshot.getChildren().iterator();
 
         while (i.hasNext()) {
 
             String chat_msg = (String) ((DataSnapshot) i.next()).getValue();
-            String decrypted_chat_msg = AES.decrypt(chat_msg, room_name);
-            String chat_user_name = (String) ((DataSnapshot) i.next()).getValue();
 
-            chat_conversation.append(chat_user_name + ": " + decrypted_chat_msg + " \n");
+
+            try {
+                String decrypted_chat_msg = AES.decrypt(chat_msg);
+                String chat_user_name = (String) ((DataSnapshot) i.next()).getValue();
+
+                chat_conversation.append(chat_user_name + ": " + decrypted_chat_msg + " \n");
+            } catch (UnsupportedEncodingException e){
+                e.printStackTrace();
+            }
 
         }
     }
+
+
 }
