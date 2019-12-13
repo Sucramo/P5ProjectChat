@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/password"
         app:layout_constraintVertical_bias="0.165"
         android:background="@drawable/ripple_effect"
-        android:textColor="@color/white"/>
+        android:textColor="@color/cold"/>
 
     <Button
         android:id="@+id/create_account_open_activity"

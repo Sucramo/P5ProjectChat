@@ -21,7 +21,8 @@
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/btn_add_task"
         android:paddingStart="10dp"
-        android:textColor="@color/white">
+        android:textColor="@color/white"
+        >
 
     </EditText>
 
