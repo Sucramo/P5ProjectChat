@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".ProjectManagement.FirstPageActivity">
+    tools:context=".ProjectManagement.FirstPageActivity"
+    >
 
 
     <RelativeLayout
@@ -56,7 +57,8 @@
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="start">
+        android:layout_gravity="start"
+        android:background="@color/colorPrimary">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -68,14 +70,20 @@
             <ListView
                 android:id="@+id/listView"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:divider="@color/colorAccent"
+                android:dividerHeight="2dp"
+                android:background="@color/colorPrimary"
+                />
 
             <EditText
                 android:id="@+id/room_name_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/listView"
-                android:layout_toLeftOf="@id/btn_add_room" />
+                android:layout_toLeftOf="@id/btn_add_room"
+                android:backgroundTint="@color/cold"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/btn_add_room"

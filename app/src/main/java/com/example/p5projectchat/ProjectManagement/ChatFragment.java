@@ -50,6 +50,7 @@ public class ChatFragment extends Fragment {
     private String temp_key;
 
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

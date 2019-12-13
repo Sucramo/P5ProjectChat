@@ -3,7 +3,9 @@
     android:color="#88FFFFFF"> <!-- Ripple color :: WHITE -->
 
     <item>
-        <color android:color="@color/colorPrimary" />
+        <color android:color="@color/black"
+            />
+
 
     </item>
     <item android:id="@android:id/mask">

@@ -25,7 +25,9 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text=""
-        android:layout_toLeftOf="@id/btn_send" />
+        android:layout_toLeftOf="@id/btn_send"
+        android:backgroundTint="@color/cold"
+        android:textColor="@color/white"/>
 
     <ScrollView
         android:layout_width="match_parent"
