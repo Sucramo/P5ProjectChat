@@ -58,7 +58,9 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingTop="20dp">
+            android:paddingTop="20dp"
+            android:paddingEnd="5dp"
+            >
 
             <ListView
                 android:id="@+id/listView"
@@ -78,7 +80,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/listView"
                 android:layout_alignParentRight="true"
-                android:text="Add Room" />
+                android:text="Add Room"
+                android:background="@drawable/ripple_effect"/>
 
 
         </RelativeLayout>
