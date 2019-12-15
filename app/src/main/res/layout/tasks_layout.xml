@@ -1,76 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="8dp">
+    android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn_add_task"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add Task"
-        android:background="@drawable/ripple_effect"
-        android:textColor="@color/white"
-        >
-
-    </Button>
-
-    <EditText
-        android:id="@+id/et_add_task"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/btn_add_task"
-        android:paddingStart="10dp"
-        android:textColor="@color/white"
-        >
-
-    </EditText>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fadingEdgeLength="0dp"
-        android:fillViewport="true"
-        android:overScrollMode="never"
-        android:scrollbars="none"
-        android:layout_below="@id/btn_add_task"
-        android:paddingTop="10dp">
-
+        android:layout_height="match_parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.example.p5projectchat.UserSettings.NonScrollListView
-                android:id="@+id/toDoList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp" />
-
             <RelativeLayout
+                android:id="@+id/toDoListLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/toDoList">
+                android:layout_height="wrap_content">
 
-                <com.example.p5projectchat.UserSettings.NonScrollListView
-                    android:id="@+id/doingList"
+                <TextView
+                    android:id="@+id/toDoTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="To do"
+                    android:textSize="30dp" />
+
+                <Button
+                    android:id="@+id/btn_add_to_do_task"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="Add Task" />
+
+                <ScrollView
+                    android:id="@+id/listViewToDo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp" />
+                    android:layout_below="@id/toDoTitle">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/doingList">
-
-                    <com.example.p5projectchat.UserSettings.NonScrollListView
-                        android:id="@+id/doneList"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingTop="10dp" />
+                        android:orientation="vertical">
 
-                </RelativeLayout>
+                        <TextView
+                            android:id="@+id/text_view_to_do_tasks"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+                    </LinearLayout>
+
+                </ScrollView>
+
+
             </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/doingListLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toDoListLayout">
+
+                <TextView
+                    android:id="@+id/doingTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="Doing"
+                    android:textSize="30dp" />
+
+                <Button
+                    android:id="@+id/btn_add_doing_task"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="Add Task" />
+
+                <ScrollView
+                    android:id="@+id/listViewDoing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/doingTitle">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text_view_doing_tasks"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/doneListLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/doingListLayout">
+
+                <TextView
+                    android:id="@+id/doneTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="Done"
+                    android:textSize="30dp" />
+
+                <Button
+                    android:id="@+id/btn_add_done_task"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="Add Task" />
+
+                <ScrollView
+                    android:id="@+id/listViewDone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/doneTitle">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text_view_done_tasks"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </RelativeLayout>
+
+
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>
