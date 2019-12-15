@@ -4,31 +4,6 @@
     android:layout_height="match_parent"
     android:padding="5dp">
 
-    <Button
-        android:id="@+id/btn_send"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:text="Send"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/ripple_effect"
-        android:textColor="@color/white"
-        />
-
-    <EditText
-        android:id="@+id/msg_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toStartOf="@id/btn_send"
-        android:layout_alignParentBottom="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text=""
-        android:layout_toLeftOf="@id/btn_send"
-        android:backgroundTint="@color/cold"
-        android:textColor="@color/white"/>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -41,10 +16,41 @@
 
             <TextView
                 android:id="@+id/chat_conversation"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="" />
+                android:layout_marginTop="4dp"
+                android:padding="8dp"
+                android:text=""
+                android:textColor="@color/white" />
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/btn_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/ripple_effect"
+        android:text="Send"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/msg_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@id/btn_send"
+        android:layout_toLeftOf="@id/btn_send"
+        android:backgroundTint="@color/cold"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textColor="@color/white"
+        android:textCursorDrawable="@null"
+        />
+
+
 
 </RelativeLayout>
