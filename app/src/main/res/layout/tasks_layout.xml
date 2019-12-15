@@ -10,12 +10,16 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp">
 
             <RelativeLayout
                 android:id="@+id/toDoListLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                >
 
                 <TextView
                     android:id="@+id/toDoTitle"
@@ -23,14 +27,17 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:text="To do"
-                    android:textSize="30dp" />
+                    android:textSize="30dp"
+                    android:textColor="@color/cold" />
 
                 <Button
                     android:id="@+id/btn_add_to_do_task"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="Add Task" />
+                    android:text="Add Task"
+                    android:background="@drawable/ripple_effect"
+                    android:textColor="@color/white"/>
 
                 <ScrollView
                     android:id="@+id/listViewToDo"
@@ -41,13 +48,16 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        >
 
                         <TextView
                             android:id="@+id/text_view_to_do_tasks"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="" />
+                            android:text=""
+                            android:textColor="@color/white"
+                            />
                     </LinearLayout>
 
                 </ScrollView>
@@ -67,14 +77,17 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:text="Doing"
-                    android:textSize="30dp" />
+                    android:textSize="30dp"
+                    android:textColor="@color/crimson"/>
 
                 <Button
                     android:id="@+id/btn_add_doing_task"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="Add Task" />
+                    android:text="Add Task"
+                    android:background="@drawable/ripple_effect"
+                    android:textColor="@color/white"/>
 
                 <ScrollView
                     android:id="@+id/listViewDoing"
@@ -91,7 +104,8 @@
                             android:id="@+id/text_view_doing_tasks"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="" />
+                            android:text=""
+                            android:textColor="@color/white"/>
                     </LinearLayout>
 
                 </ScrollView>
@@ -110,14 +124,17 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:text="Done"
-                    android:textSize="30dp" />
+                    android:textSize="30dp"
+                    android:textColor="@color/green"/>
 
                 <Button
                     android:id="@+id/btn_add_done_task"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="Add Task" />
+                    android:text="Add Task"
+                    android:background="@drawable/ripple_effect"
+                    android:textColor="@color/white"/>
 
                 <ScrollView
                     android:id="@+id/listViewDone"
@@ -134,7 +151,8 @@
                             android:id="@+id/text_view_done_tasks"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="" />
+                            android:text=""
+                            android:textColor="@color/white"/>
                     </LinearLayout>
 
                 </ScrollView>
