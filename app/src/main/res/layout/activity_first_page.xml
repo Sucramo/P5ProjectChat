@@ -37,7 +37,9 @@
                     android:background="?attr/colorPrimary"
                     tools:ignore="MissingConstraints"
                     app:tabTextColor="@color/white"
-                    app:tabIndicatorColor="@color/cold"/>
+                    app:tabIndicatorColor="@color/cold"
+                    app:tabTextAppearance="@style/TablayoutTextSize"
+                    />
 
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/view_pager"
@@ -63,8 +65,9 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingTop="20dp"
-            android:paddingEnd="5dp"
+            android:paddingTop="40dp"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp"
             >
 
             <TextView
@@ -73,10 +76,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:text="Chat Rooms"
-                android:textSize="20dp"
+                android:textSize="25dp"
                 android:textColor="@color/cold"
-                android:paddingStart="8dp"
-                android:layout_centerHorizontal="true"/>
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"/>
 
             <ListView
                 android:id="@+id/listView"
