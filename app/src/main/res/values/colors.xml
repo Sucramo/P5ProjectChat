@@ -145,6 +145,11 @@
     <color name="navy">#000080</color>
     <color name="black">#000000</color>
     <color name="test">#3b3b3b</color>
+    <color name="funkyorange">#E08E4D</color>
+    <color name="funkyyellow">#F0D779</color>
+    <color name="funkygreen">#96B682</color>
+
+
 
 
 </resources>

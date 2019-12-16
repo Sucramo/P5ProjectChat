@@ -16,7 +16,7 @@
         android:layout_gravity="center"
         android:id="@+id/toolbar_title"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="25dp"
         android:textStyle="bold"/>
 
 
