@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.p5projectchat.R;
@@ -23,7 +24,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ChatRoom extends AppCompatActivity {
 
-    private Button btn_send_msg;
+    private ImageButton btn_send_msg;
     private EditText input_msg;
     private TextView chat_conversation;
 
@@ -36,7 +37,7 @@ public class ChatRoom extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chat_layout);
 
-        btn_send_msg = (Button) findViewById(R.id.btn_send);
+        btn_send_msg = findViewById(R.id.btn_send);
         input_msg = (EditText) findViewById(R.id.msg_input);
         chat_conversation = (TextView) findViewById(R.id.chat_conversation);
 
