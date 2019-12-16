@@ -19,40 +19,44 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:lineSpacingExtra="8dp"
                 android:text=""
                 android:textColor="@color/white"
-                android:lineSpacingExtra="8dp"
-                android:textSize="20dp"
-                />
+                android:textSize="20dp" />
         </LinearLayout>
     </ScrollView>
 
-    <Button
-        android:id="@+id/btn_send"
+    <RelativeLayout
+        android:id="@+id/rel_img_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/ripple_effect"
-        android:text="Send"
-        android:textColor="@color/white" />
+        android:layout_alignParentEnd="true"
+        android:paddingStart="10dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="2dp">
+
+        <ImageButton
+            android:id="@+id/btn_send"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_send_black_24dp"
+            android:scaleType="fitCenter" />
+    </RelativeLayout>
 
     <EditText
         android:id="@+id/msg_input"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@id/btn_send"
-        android:layout_toLeftOf="@id/btn_send"
+        android:layout_toStartOf="@id/rel_img_button"
         android:backgroundTint="@color/cold"
         android:ems="10"
         android:inputType="textPersonName"
         android:text=""
         android:textColor="@color/white"
-        android:textCursorDrawable="@null"
-        />
-
+        android:textCursorDrawable="@null" />
 
 
 </RelativeLayout>

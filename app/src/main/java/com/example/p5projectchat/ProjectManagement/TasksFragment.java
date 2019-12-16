@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.p5projectchat.R;
@@ -26,7 +27,7 @@ public class TasksFragment extends Fragment {
 
     private DatabaseReference databaseReference;
     private String room_name;
-    private Button add_to_do_task_button, add_doing_task_button, add_done_task_button;
+    private ImageButton add_to_do_task_button, add_doing_task_button, add_done_task_button;
     private TextView textViewToDoTasks, textViewDoingTasks, textViewDoneTasks;
 
     @Nullable
