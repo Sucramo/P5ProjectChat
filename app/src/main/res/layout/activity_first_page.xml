@@ -75,7 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:text="Chat Rooms"
+                android:text="Rooms"
                 android:textSize="25dp"
                 android:textColor="@color/cold"
                 android:layout_centerHorizontal="true"
